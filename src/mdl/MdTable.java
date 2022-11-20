@@ -39,7 +39,7 @@ public class MdTable {
                 if (a == ' ') {
                     if (now.matches("#+")) {
                         nowf = (float) (3.3f - now.length() * 0.6f);
-                    } else ta.add(now, nowf).size(0.8f);
+                    } else ta.add(now,nowt, nowf);
                     now = "";
                 } else now = now + a;
 

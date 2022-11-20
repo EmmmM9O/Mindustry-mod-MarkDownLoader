@@ -8,7 +8,7 @@ name: "mdl"
 author: "emmm"
 
 #the fully qualified main class of the mod
-main: "mdl.MainMod"
+main: "mdl.mainMod"
 
 #the mod description as seen in the mod dialog
 description: "A Mindustry Java mod template."

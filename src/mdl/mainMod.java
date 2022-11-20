@@ -2,12 +2,15 @@ package mdl;
 
 import arc.*;
 import arc.util.*;
+import mindustry.content.Items;
 import mindustry.game.EventType.*;
 import mindustry.mod.*;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
 import mindustry.ui.dialogs.*;
 
 public class mainMod extends Mod{
-
+    public MarkBlock MarkDownMessgae;
     public mainMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
 
@@ -27,7 +30,10 @@ public class mainMod extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading mdl");
-
+        MarkDownMessgae=new MarkBlock("MarkDownMessage"){{
+            requirements(Category.logic,ItemStack.with(Items.graphite,5));
+        }
+        };
     }
 
 }

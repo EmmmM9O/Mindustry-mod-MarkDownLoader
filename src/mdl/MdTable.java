@@ -5,9 +5,8 @@ import arc.scene.ui.layout.Table;
 import java.util.Vector;
 
 public class MdTable {
-    public Vector<String> arr=new Vector<String>();
-    public Table ta;
-    public void init(){
+    public Vector<String> arr=new Vector<>();
+    public void init(Table ta){
         String now="";
         float nowf=1f;
         for (String i:arr){
@@ -16,7 +15,7 @@ public class MdTable {
                 char a = i.charAt(v);
                 if (a == ' ') {
                     if (now.matches("#+")) {
-                        nowf = (float) (3f - now.length() * 1.2f);
+                        nowf = (float) (3.3f - now.length() * 0.3f);
                     } else ta.add(now, nowf);
                     now = "";
                 } else now = now + a;
@@ -27,6 +26,7 @@ public class MdTable {
         }
     }
     public void reset(String data,Table t){
+
         String now="";
         for(int i=0;i<data.length();i++){
             char a=data.charAt(i);
@@ -37,8 +37,7 @@ public class MdTable {
             else now=now+a;
         }
         if (now.length()!=0) arr.add(now);
-        ta=t;
-        init();
+        init(t);
     }
 
     public MdTable(){

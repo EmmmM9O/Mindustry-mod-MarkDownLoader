@@ -11,7 +11,7 @@ author: "emmm"
 main: "mdl.mainMod"
 
 #the mod description as seen in the mod dialog
-description: "A Mindustry Java mod template."
+description : "For load MarkDown"
 
 #the mod version
 version: 1.0

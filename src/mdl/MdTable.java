@@ -5,7 +5,7 @@ import arc.scene.ui.layout.Table;
 import java.util.Vector;
 
 public class MdTable {
-    public Vector<String> arr;
+    public Vector<String> arr=new Vector<String>();
     public Table ta;
     public void init(){
         String now="";

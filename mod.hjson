@@ -1,14 +1,14 @@
 #the mod name as displayed in-game
-displayName: "Java Mod Template"
+displayName: "MarkDownLoader"
 
 #the internal name of your mod
-name: "example-java-mod"
+name: "mdl"
 
 #your name
-author: "You"
+author: "emmm"
 
 #the fully qualified main class of the mod
-main: "example.ExampleJavaMod"
+main: "mdl.MainMod"
 
 #the mod description as seen in the mod dialog
 description: "A Mindustry Java mod template."

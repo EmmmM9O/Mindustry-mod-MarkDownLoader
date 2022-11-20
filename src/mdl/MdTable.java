@@ -10,7 +10,7 @@ import java.util.Vector;
 
 public class MdTable {
     public Label.LabelStyle Xt=new Label.LabelStyle(Fonts.tech, Colors.get("WHITE"));
-    public Label.LabelStyle Ut=new Label.LabelStyle(Fonts.def,Colors.get("WHITE"));
+    public Label.LabelStyle Ut=new Label.LabelStyle(Fonts.outline,Colors.get("WHITE"));
     public Vector<String> arr=new Vector<>();
     public Stack<Integer> XList=new Stack<Integer>();
     public void init(Table ta){

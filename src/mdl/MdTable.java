@@ -1,5 +1,6 @@
 package mdl;
 
+import arc.Core;
 import arc.graphics.Colors;
 import arc.scene.ui.Label;
 import arc.scene.ui.layout.Table;
@@ -18,22 +19,27 @@ public class MdTable {
         var nowt=Ut;
         float nowf=1f;int Xad=-1;
         for (String i:arr){
-            nowf=1f;now="";nowt=Ut;
+            nowf=1f;now="";nowt=Ut;Xad=-1;
             for (int v=0;v<i.length();v++) {
+
                 char a = i.charAt(v);
                 if (a=='*'){
                     var k=i.indexOf("*",v+1);
                     if (k!=-1){
-                        Xad=k;
+                        Xad=k;nowt=Xt;
                     }
+                    else if (v==0){
+                        ta.image(Core.atlas.drawable("mdl-d"));
+                    }
+                    else nowt=Ut;
                 }
-                if (v<=Xad){
-                    nowt=Xt;
+                if (v>Xad){
+                    nowt=Ut;
                 }
                 if (a == ' ') {
                     if (now.matches("#+")) {
-                        nowf = (float) (3.3f - now.length() * 0.3f);
-                    } else ta.add(now, nowf);
+                        nowf = (float) (3.3f - now.length() * 0.6f);
+                    } else ta.add(now, nowf).size(0.8f);
                     now = "";
                 } else now = now + a;
 

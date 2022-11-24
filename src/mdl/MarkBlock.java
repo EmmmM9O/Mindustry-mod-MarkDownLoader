@@ -16,7 +16,7 @@ public class MarkBlock extends MessageBlock {
             table.button("show",()->{
                 var ui=new BaseDialog("MarkDown");
                 ui.cont.table(t -> {
-                    md.reset(message.toString(),t);
+                    md.add(message.toString(),t);
                 });
                 ui.button("@ok",ui::hide);
                 ui.show();

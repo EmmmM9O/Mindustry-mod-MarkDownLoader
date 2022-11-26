@@ -17,7 +17,7 @@ public class MdTable {
     public static MdG key[]={Gs.XieTi};
     public static String k="[^*~#\\n]";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline,Colors.get("Black"));
-    public Vector<Integer>[] l=new Vector[key.length]();
+    public Vector<Integer>[] l=new Vector[key.length];
     public Integer useScl=1;
     public Integer[] now=new Integer[key.length];
     public void init(){

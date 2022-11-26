@@ -5,10 +5,12 @@ import mindustry.ui.dialogs.BaseDialog;
 import mindustry.world.blocks.logic.MessageBlock;
 
 public class MarkBlock extends MessageBlock {
+    public MdTable md=new MdTable();
     public MarkBlock(String name){
         super(name);
+        md.init();
     }
-    public MdTable md=new MdTable();
+  
     public class MarkBuild extends MessageBuild {
         @Override
         public void buildConfiguration(Table table){

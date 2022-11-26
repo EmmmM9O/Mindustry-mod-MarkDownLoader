@@ -20,10 +20,18 @@ public class MdTable {
     public Vector<Integer> l[]=new Vector[key.length];
     public Integer useScl=1;
     public Integer now[]=new Integer[key.length];
+    public void init(){
+        for (var i:l){
+            i=new Vector<Integer>();
+        }
+        for (var i:now){
+            i=0;
+        }
+    }
     public void add(String data,Table t){
         Matcher m;
         for (var i:l){
-            i.clear();
+            if(i.size()>0) i.clear();
         }
         float scl=0;int cnt=0;
         for (MdG i : key){

@@ -32,13 +32,13 @@ public class MdTable {
         }
     }
     public void add(String data,Table t){
-        Matcher m;
+
         for (var i:l){
             if(i.size()>0) i.clear();
         }
         float scl=0;int cnt=0;
         for (MdG i : key){
-            m= Pattern.compile(i.i).matcher(data);
+            var m= Pattern.compile(i.i).matcher(data);
 
             while (m.find()){
                 l[cnt].add(m.start());
@@ -47,7 +47,7 @@ public class MdTable {
             }
             cnt++;
         }
-        m=Pattern.compile(k).matcher(data);
+        var m=Pattern.compile(k).matcher(data);
         for (var i : now){
             i=0;
         }

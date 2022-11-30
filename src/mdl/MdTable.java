@@ -38,6 +38,10 @@ public class MdTable {
         }
         float scl=0;int cnt=0;
         for (MdG i : key){
+            Log.info("key:");
+            Log.info(i.i);
+            Log.info("data:");
+            Log.info(data);
             var m= Pattern.compile(i.i).matcher(data);
 
             while (m.find()){

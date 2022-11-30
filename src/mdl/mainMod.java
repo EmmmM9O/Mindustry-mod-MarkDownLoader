@@ -29,6 +29,7 @@ public class mainMod extends Mod{
 
     @Override
     public void loadContent(){
+        Gs.init();
         Log.info("Loading mdl");
         MarkDownMessgae=new MarkBlock("MarkDownMessage"){{
             requirements(Category.logic,ItemStack.with(Items.graphite,5));

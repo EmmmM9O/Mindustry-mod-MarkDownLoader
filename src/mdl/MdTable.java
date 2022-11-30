@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MdTable {
-    public static MdG key[]={Gs.XieTi};
+    public static MdG key[]={Gs.ChuTi};
     public static String k="[^*~#\\n]";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline,Colors.get("Black"));
     public Vector<Integer>[] l=new Vector[key.length];
@@ -33,7 +33,7 @@ public class MdTable {
         }
     }
     public void add(String data,Table t){
-        Gs.init();
+        
 
         for (var i:l){
             if(i.size()>0) i.clear();

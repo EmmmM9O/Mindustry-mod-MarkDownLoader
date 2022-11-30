@@ -33,6 +33,7 @@ public class MdTable {
         }
     }
     public void add(String data,Table t){
+        Gs.init();
 
         for (var i:l){
             if(i.size()>0) i.clear();

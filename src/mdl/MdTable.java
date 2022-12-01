@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public class MdTable {
     public static MdG key[]={Gs.ChuTi};
-    public static String k="[^*~#\\n]";
+    public static String k="[^*~#\\n]+";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline,Colors.get("Black"));
     public Vector<Integer>[] l=new Vector[key.length];
     public Integer useScl=1;
@@ -54,6 +54,9 @@ public class MdTable {
             cnt++;
         }
         var m=Pattern.compile(k).matcher(data);
+        for(int i=0;i<key.length;i++){
+            now[i]=0;
+        }
         for (var i : now){
             i=0;
         }
@@ -61,9 +64,11 @@ public class MdTable {
         while (m.find()){
             cnt=0;
             for (var i:key){
-
-                if (m.end()<l[cnt].get(now[cnt*2])&&m.start()>=l[cnt].get(now[cnt]*2)){
+                if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
+                if (m.end()<l[cnt].get(now[cnt]*2)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     i.Run.get(t,scl,e);
+                }else if(m.end()>l[cnt].get(now[cnt]*2)){
+                    now[cnt]++;
                 }
                 t.add(m.group(cnt+1),e,scl);
                 scl=useScl;

@@ -70,7 +70,7 @@ public class MdTable {
                 }else if(m.end()>l[cnt].get(now[cnt]*2)){
                     now[cnt]++;
                 }
-                t.add(m.group(cnt+1),e,scl);
+                t.add(m.group(cnt),e,scl);
                 scl=useScl;
                 e=UseL;
                 cnt++;

@@ -29,6 +29,7 @@ public class mainMod extends Mod{
 
     @Override
     public void loadContent(){
+        Gs.init();
         Log.info("Loading mdl");
         Gs.init();
         MarkDownMessgae=new MarkBlock("MarkDownMessage"){{

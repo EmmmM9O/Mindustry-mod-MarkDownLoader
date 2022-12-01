@@ -5,6 +5,7 @@ import arc.graphics.Colors;
 import arc.math.Mat;
 import arc.scene.ui.Label;
 import arc.scene.ui.layout.Table;
+import arc.util.*;
 import mindustry.ui.Fonts;
 
 import java.util.Objects;
@@ -14,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MdTable {
-    public static MdG key[]={Gs.XieTi};
+    public static MdG key[]={Gs.ChuTi};
     public static String k="[^*~#\\n]";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline,Colors.get("Black"));
     public Vector<Integer>[] l=new Vector[key.length];
@@ -32,12 +33,17 @@ public class MdTable {
         }
     }
     public void add(String data,Table t){
+        
 
         for (var i:l){
             if(i.size()>0) i.clear();
         }
         float scl=0;int cnt=0;
         for (MdG i : key){
+            Log.info("key:");
+            Log.info(i.i);
+            Log.info("data:");
+            Log.info(data);
             var m= Pattern.compile(i.i).matcher(data);
 
             while (m.find()){

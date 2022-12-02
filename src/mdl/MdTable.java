@@ -38,7 +38,7 @@ public class MdTable {
         for (var i:l){
             if(i.size()>0) i.clear();
         }
-        float scl=0;int cnt=0;
+        float scl=1f;int cnt=0;
         for (MdG i : key){
             Log.info("key:");
             Log.info(i.i);
@@ -70,7 +70,7 @@ public class MdTable {
                 }else if(m.end()>l[cnt].get(now[cnt]*2)){
                     now[cnt]++;
                 }
-                t.add(m.group(cnt));
+                t.add(m.group(cnt),e,scl);
                 scl=useScl;
                 e=UseL;
                 cnt++;

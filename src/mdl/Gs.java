@@ -9,8 +9,8 @@ public class Gs {
     public static MdG ChuTi=new MdG(),XieTi=new MdG(),title=new MdG();
     public static void init(){
         ChuTi.i="(\\b|^)\\*{1}\\b[^*\\n]+\\b\\*{1}(\\b|$)";
-        ChuTi.Run=(t,scl,e)->{
-            t.add("ChuTiTest");
+        ChuTi.Run=(t,scl,e,s)->{
+            t.add(s,C,scl);
             e=C;
         };
 

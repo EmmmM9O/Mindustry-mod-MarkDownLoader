@@ -78,14 +78,12 @@ public class MdTable {
                     }
                 if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     Log.info("run");
-                    i.Run.get(t,scl,e);
+                    i.Run.get(t,scl,e,m.group(cnt));
                 }else if(m.end()>=l[cnt].get(now[cnt]*2+1)){
                     now[cnt]++;
+                    t.add(m.group(cnt),e,scl);
                 }
-                t.add(m.group(cnt),e,scl);
-                scl=useScl;
-                e=UseL;
-                
+                else t.add(m.group(cnt),e,scl);
             }
         }
     }

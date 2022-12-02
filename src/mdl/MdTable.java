@@ -49,6 +49,8 @@ public class MdTable {
             while (m.find()){
                 l[cnt].add(m.start());
                 l[cnt].add(m.end());
+                Log.info("add");
+                Log.info(m.start());
 
             }
             cnt++;
@@ -65,7 +67,7 @@ public class MdTable {
             cnt=-1;
             for (var i:key){
                 cnt++;
-                if(now[cnt]*2>=l[cnt].length()) continue;
+                if(now[cnt]*2>=l[cnt].size()) continue;
                 if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
                 if (m.end()<l[cnt].get(now[cnt]*2)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     i.Run.get(t,scl,e);

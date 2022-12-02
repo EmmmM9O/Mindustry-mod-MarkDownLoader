@@ -10,6 +10,7 @@ public class Gs {
     public static void init(){
         ChuTi.i="(\\b|^)\\*{1}\\b[^*\\n]+\\b\\*{1}(\\b|$)";
         ChuTi.Run=(t,scl,e)->{
+            t.add("ChuTiTest");
             e=C;
         };
 

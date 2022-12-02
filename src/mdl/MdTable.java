@@ -67,12 +67,19 @@ public class MdTable {
             cnt=-1;
             for (var i:key){
                 cnt++;
-                if(now[cnt]*2>=l[cnt].size()) continue;
-                if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
+                if(now[cnt]*2>=l[cnt].size()) {
+                    t.add(m.group(cnt),e,scl);
+                    continue;
+                  
+                    }
+                if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) {
+                    t.add(m.group(cnt),e,scl);
+                    continue;
+                    }
                 if (m.end()<l[cnt].get(now[cnt]*2)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     i.Run.get(t,scl,e);
                 }else if(m.end()>l[cnt].get(now[cnt]*2)){
-                    now[cnt]++;
+                    now[cnt]=m.end();
                 }
                 t.add(m.group(cnt),e,scl);
                 scl=useScl;

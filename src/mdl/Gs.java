@@ -2,6 +2,7 @@ package mdl;
 
 import arc.Core;
 import arc.files.Fi;
+import arc.files.ZipFi;
 import arc.freetype.FreeTypeFontGenerator;
 import arc.freetype.FreetypeFontLoader;
 import arc.graphics.Color;
@@ -17,7 +18,12 @@ public class Gs {
     public static MdG ChuTi=new MdG(),XieTi=new MdG(),title=new MdG();
     public static void init(){
 
-        Core.assets.load("CT", Font.class, new FreetypeFontLoader.FreeTypeFontLoaderParameter(Vars.mods.getMod(mainMod.class).root.child("fonts").child("SmileySans-Oblique.ttf").path(), new FreeTypeFontGenerator.FreeTypeFontParameter(){{
+        var k=Vars.mods.getMod(mainMod.class).file;
+        var z=new ZipFi(k);var w=k.parent().parent();
+        z.child("fonts").copyFilesTo(w);
+        var sr=w.child("fonts").child("SmileySans-Oblique.ttf").path();
+
+        Core.assets.load("CT", Font.class, new FreetypeFontLoader.FreeTypeFontLoaderParameter(sr, new FreeTypeFontGenerator.FreeTypeFontParameter(){{
             size = 18;
         }})).loaded = f -> {
             CT = f;

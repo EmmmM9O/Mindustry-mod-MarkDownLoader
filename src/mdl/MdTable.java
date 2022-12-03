@@ -81,9 +81,11 @@ public class MdTable {
                     i.Run.get(t,scl,e,m.group(cnt));
                 }else if(m.end()>=l[cnt].get(now[cnt]*2+1)){
                     now[cnt]++;
-                    t.add(m.group(cnt),e,scl);
+                    e=UseL;
+                    scl=1;
+                  
                 }
-                else t.add(m.group(cnt),e,scl);
+                t.add(m.group(cnt),e,scl);
             }
         }
     }

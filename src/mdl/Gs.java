@@ -21,7 +21,7 @@ public class Gs {
         var k=Vars.mods.getMod(mainMod.class).file;
         var z=new ZipFi(k);var w=k.parent().parent();
         z.child("fonts").copyFilesTo(w);
-        var sr=w.child("fonts").child("SmileySans-Oblique.ttf").path();
+        var sr=w.child("SmileySans-Oblique.ttf").path();
 
         Core.assets.load("CT", Font.class, new FreetypeFontLoader.FreeTypeFontLoaderParameter(sr, new FreeTypeFontGenerator.FreeTypeFontParameter(){{
             size = 18;

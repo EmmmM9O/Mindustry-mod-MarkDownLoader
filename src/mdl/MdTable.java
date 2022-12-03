@@ -65,6 +65,7 @@ public class MdTable {
         Label.LabelStyle e=UseL;
         while (m.find()){
             cnt=-1;
+            
             for (var i:key){
                 cnt++;
                 if(now[cnt]*2>=l[cnt].size()) {
@@ -78,11 +79,11 @@ public class MdTable {
                     }
                 if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     Log.info("run");
+                    Log.info(m.group(cnt));
                     i.Run.get(t,scl,e,m.group(cnt));
                 }else if(m.end()>=l[cnt].get(now[cnt]*2+1)){
                     now[cnt]++;
-                    e=UseL;
-                    scl=1;
+                    
                   
                 }
                 t.add(m.group(cnt),e,scl);

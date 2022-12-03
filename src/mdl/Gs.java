@@ -16,7 +16,13 @@ public class Gs {
     public static Label.LabelStyle C=new Label.LabelStyle(CT, Color.black);
     public static MdG ChuTi=new MdG(),XieTi=new MdG(),title=new MdG();
     public static void init(){
-        CT=new Font(Vars.mods.getMod(mainMod.class).root.child("fonts").child("SmileySans-Oblique.ttf"));
+
+        Core.assets.load("CT", Font.class, new FreetypeFontLoader.FreeTypeFontLoaderParameter(Vars.mods.getMod(mainMod.class).root.child("fonts").child("SmileySans-Oblique.ttf").path(), new FreeTypeFontGenerator.FreeTypeFontParameter(){{
+            size = 18;
+        }})).loaded = f -> {
+            CT = f;
+            CT.getData().down *= 1.0f;
+        };
         ChuTi.i="((?![^*])|^)\\*{1}\\b[^*\\n]+\\b\\*{1}((?=[^*])|$)";
         ChuTi.Run=(t,scl,e,s)->{
             t.add(s,C,scl);

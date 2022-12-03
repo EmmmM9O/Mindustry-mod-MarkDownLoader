@@ -10,7 +10,7 @@ import mindustry.type.ItemStack;
 import mindustry.ui.dialogs.*;
 
 public class mainMod extends Mod{
-    public MarkBlock MarkDownMessgae;
+    public MarkBlock MarkDownMessage;
     public mainMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
 
@@ -18,10 +18,10 @@ public class mainMod extends Mod{
         Events.on(ClientLoadEvent.class, e -> {
             //show dialog upon startup
             Time.runTask(10f, () -> {
-                BaseDialog dialog = new BaseDialog("frog");
-                dialog.cont.add("behold").row();
+                BaseDialog dialog = new BaseDialog("modinfo");
+                dialog.cont.add("still make").row();
 
-                dialog.cont.button("I see", dialog::hide).size(100f, 50f);
+                dialog.cont.button("@ok", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
         });
@@ -32,7 +32,7 @@ public class mainMod extends Mod{
         Gs.init();
         Log.info("Loading mdl");
         Gs.init();
-        MarkDownMessgae=new MarkBlock("MarkDownMessage"){{
+        MarkDownMessage=new MarkBlock("MarkDownMessage"){{
             requirements(Category.logic,ItemStack.with(Items.graphite,5));
         }
         };

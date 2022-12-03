@@ -1,6 +1,7 @@
 package mdl;
 
 import arc.Core;
+import arc.graphics.Color;
 import arc.graphics.Colors;
 import arc.math.Mat;
 import arc.scene.ui.Label;
@@ -17,7 +18,7 @@ import java.util.regex.Pattern;
 public class MdTable {
     public static MdG key[]={Gs.ChuTi};
     public static String k="[^*~#\\n]+";
-    public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline,Colors.get("Black"));
+    public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline, Color.black);
     public Vector<Integer>[] l=new Vector[key.length];
     public Integer useScl=1;
     public Integer[] now=new Integer[key.length];
@@ -87,6 +88,10 @@ public class MdTable {
                   
                 }
                 else t.add(m.group(cnt),e,scl);
+                if (data.charAt(m.end())=='\n'){
+                    t.row();
+                    scl=1;
+                }
             }
         }
     }

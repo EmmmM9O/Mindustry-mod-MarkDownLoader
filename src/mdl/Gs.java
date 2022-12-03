@@ -13,7 +13,7 @@ public class Gs {
         ChuTi.Run=(t,scl,e,s)->{
             t.add(s,C,scl);
             e=C;
-            Log.info(s);
+
         };
 
     }

@@ -17,6 +17,7 @@ public class MarkBlock extends MessageBlock {
             super.buildConfiguration(table);
             table.button("show",()->{
                 var ui=new BaseDialog("MarkDown");
+                ui.background(Core.atlas.drawable("mdl-BackGround"));
                 ui.cont.table(t -> {
                     md.add(message.toString(),t);
                 });

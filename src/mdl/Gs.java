@@ -1,6 +1,7 @@
 package mdl;
 
 import arc.Core;
+import arc.files.Fi;
 import arc.freetype.FreeTypeFontGenerator;
 import arc.freetype.FreetypeFontLoader;
 import arc.graphics.Color;
@@ -14,12 +15,7 @@ public class Gs {
     public static Label.LabelStyle C=new Label.LabelStyle(CT, Color.black);
     public static MdG ChuTi=new MdG(),XieTi=new MdG(),title=new MdG();
     public static void init(){
-
-        Core.assets.load("CT", Font.class, new FreetypeFontLoader.FreeTypeFontLoaderParameter("fonts/SourceHanSansCN-Normal.ttf", new FreeTypeFontGenerator.FreeTypeFontParameter(){{
-            size = 18;
-        }})).loaded = f -> {
-            CT= f;
-        };
+        CT=new Font(Fi.get("fonts/SourceHanSansCN-Normal.ttf"));
         ChuTi.i="((?![^*])|^)\\*{1}\\b[^*\\n]+\\b\\*{1}((?=[^*])|$)";
         ChuTi.Run=(t,scl,e,s)->{
             t.add(s,C,scl);

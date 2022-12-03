@@ -1,36 +1,27 @@
 package mdl;
 
-import arc.Core;
+
 import arc.graphics.Color;
-import arc.graphics.Colors;
-import arc.math.Mat;
+
 import arc.scene.ui.Label;
 import arc.scene.ui.layout.Table;
 import arc.util.*;
 import mindustry.ui.Fonts;
 
-import java.util.Objects;
-import java.util.Stack;
 import java.util.Vector;
-import java.util.regex.Matcher;
+
 import java.util.regex.Pattern;
 
 public class MdTable {
-    public static MdG key[]={Gs.ChuTi};
+    public static MdG[] key={Gs.ChuTi};
     public static String k="[^*~#\\n]+";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline, Color.black);
-    public Vector<Integer>[] l=new Vector[key.length];
-    public Integer useScl=1;
+    public Vector<Integer>[] l;
+
     public Integer[] now=new Integer[key.length];
     public void init(){
-        for (var i:l){
-            i=new Vector<Integer>();
-        }
-        for(var i=0;i<key.length;i++){
-            l[i]=new Vector<Integer>();
-            }
-        for (var i:now){
-            i=0;
+        for(var i=0;i<key.length;i++) {
+            l[i] = new Vector<>();
         }
     }
     public void add(String data,Table t){
@@ -60,9 +51,6 @@ public class MdTable {
         for(int i=0;i<key.length;i++){
             now[i]=0;
         }
-        for (var i : now){
-            i=0;
-        }
         Label.LabelStyle e=UseL;
         while (m.find()){
             cnt=-1;
@@ -81,7 +69,7 @@ public class MdTable {
                 if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     Log.info("run");
                     Log.info(m.group(cnt));
-                    i.Run.get(t,scl,e,m.group(cnt));
+                    scl=i.Run.get(t,scl,e,m.group(cnt));
                 }else if(m.end()>=l[cnt].get(now[cnt]*2+1)){
                     now[cnt]++;
                     t.add(m.group(cnt),e,scl);

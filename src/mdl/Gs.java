@@ -55,6 +55,7 @@ CT = generator.generateFont(parameter, new FreeTypeFontData() {
 }
 
 });
+        C=new Label.LabelStyle(CT, Color.black);
         ChuTi.i="((?![^*])|^)\\*{1}\\b[^*\\n]+\\b\\*{1}((?=[^*])|$)";
         ChuTi.Run=(t,scl,e,s)->{
             t.add(s,C,scl);

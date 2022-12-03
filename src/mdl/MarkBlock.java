@@ -3,6 +3,7 @@ package mdl;
 import arc.scene.ui.layout.Table;
 import mindustry.ui.dialogs.BaseDialog;
 import mindustry.world.blocks.logic.MessageBlock;
+import arc.Core;
 
 public class MarkBlock extends MessageBlock {
     public MdTable md=new MdTable();

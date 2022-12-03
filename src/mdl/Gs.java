@@ -4,6 +4,7 @@ import arc.Core;
 import arc.files.Fi;
 import arc.files.ZipFi;
 import arc.freetype.*;
+import arc.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import arc.graphics.Color;
 import arc.graphics.g2d.Font;
 import arc.scene.ui.Label;

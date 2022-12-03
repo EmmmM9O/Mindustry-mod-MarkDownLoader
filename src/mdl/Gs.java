@@ -18,17 +18,23 @@ public class Gs {
     public static MdG ChuTi=new MdG(),XieTi=new MdG(),title=new MdG();
     public static void init(){
 
-        var k=Vars.mods.getMod(mainMod.class).file;
-        var z=new ZipFi(k);var w=k.parent().parent();
-        z.child("fonts").copyFilesTo(w);
-        var sr=w.child("SmileySans-Oblique.ttf").path();
-
-        Core.assets.load("CT", Font.class, new FreetypeFontLoader.FreeTypeFontLoaderParameter(sr, new FreeTypeFontGenerator.FreeTypeFontParameter(){{
-            size = 18;
-        }})).loaded = f -> {
-            CT = f;
-            CT.getData().down *= 1.0f;
-        };
+        Fi fontFi = Vars.mods.getMod(mainMod.class).root.child("fonts").child("SmileySans-Oblique.ttf");
+		if (!fontFi.exists()) {
+			MSYHMONO = Fonts.def;
+			return;
+		}
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(fontFi);
+		FreeTypeFontParameter parameter = new FreeTypeFontParameter() {{
+			size = 22;
+			shadowColor = Color.black;
+			shadowOffsetY = 2;
+			incremental = true;
+		}};
+		CT = generator.generateFont(parameter, new FreeTypeFontData() {
+			{
+				markupEnabled = true;
+			}
+		});
         ChuTi.i="((?![^*])|^)\\*{1}\\b[^*\\n]+\\b\\*{1}((?=[^*])|$)";
         ChuTi.Run=(t,scl,e,s)->{
             t.add(s,C,scl);

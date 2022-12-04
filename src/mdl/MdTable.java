@@ -65,7 +65,7 @@ public class MdTable {
 
                         var pa=i.Run.get(t,scl,new Label.LabelStyle(e),ew,nows);
                         scl=pa.first;e=new Label.LabelStyle(pa.second);
-                        break;
+                        
                     }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
                         now[cnt]++;
                         e=new Label.LabelStyle(UseL);

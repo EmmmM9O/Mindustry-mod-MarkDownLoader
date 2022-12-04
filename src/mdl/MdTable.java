@@ -25,35 +25,31 @@ public class MdTable {
         }
     }
     public void add(String data,Table t){
-        
 
-        for (var i:l){
-            if(i.size()>0) i.clear();
-        }
-        float scl=1f;int cnt=0;
-        for (MdG i : key){
-            var m= Pattern.compile(i.i).matcher(data);
-
-            while (m.find()){
-                l[cnt].add(m.start());
-                l[cnt].add(m.end());
-                Log.info("add");
-                Log.info(m.start());
-
-            }
-            cnt++;
-        }
-
-        for(int i=0;i<key.length;i++){
-            now[i]=0;
-        }
+        float scl=1f;int cnt;
         Label.LabelStyle e=UseL;
-
         var flag=false;
-
 
         var ss=data.split("\\n");
         for (var nows : ss){
+            for (var i:l){
+                if(i.size()>0) i.clear();
+            }
+            cnt=0;
+            for (MdG i : key){
+                var m= Pattern.compile(i.i).matcher(nows);
+
+                while (m.find()){
+                    l[cnt].add(m.start());
+                    l[cnt].add(m.end());
+                    Log.info("add");
+                }
+                cnt++;
+            }
+
+            for(int i=0;i<key.length;i++){
+                now[i]=0;
+            }
             var m=Pattern.compile(k).matcher(nows);
             while (m.find()){
                 cnt=-1;

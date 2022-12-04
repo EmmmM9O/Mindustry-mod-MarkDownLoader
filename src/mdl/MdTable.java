@@ -100,7 +100,7 @@ public class MdTable {
 
                         scl=pa.first;e=new Label.LabelStyle(pa.second);
 
-                        break;
+                        
 
                     }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
 

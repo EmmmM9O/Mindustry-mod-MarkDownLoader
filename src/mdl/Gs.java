@@ -8,10 +8,15 @@ public class Gs {
         /*
         *test*
          */
+
         Til.i="^#+ .+";
         Til.Run=(t,scl,e,s,i)->{
             scl=3f;
-            return new pair<>((scl-(i-1)*0.6f),e);
+            for(int j=0;j<i.length();j++){
+                if(i.charAt(j)!='#') break;
+                scl-=0.6f;
+            }
+            return new pair<>(scl,e);
         };
         ChuTi.i="((?![^*])|^)\\*{1}\\b[^*\\n]+\\b\\*{1}((?=[^*])|$)";
         ChuTi.Run=(t,scl,e,s,i)->{

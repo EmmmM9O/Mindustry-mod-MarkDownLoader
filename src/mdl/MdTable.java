@@ -51,8 +51,10 @@ public class MdTable {
             }
             var m=Pattern.compile(k).matcher(nows);
             while (m.find()){
+                e=UseL;
                 cnt=-1;
                 String ew=m.group();
+
 
                 for (var i:key){
                     cnt++;
@@ -61,7 +63,7 @@ public class MdTable {
                     if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
                     if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
 
-                        var pa=i.Run.get(t,scl,e,ew,m.start());
+                        var pa=i.Run.get(t,scl,e,ew,nows);
                         scl=pa.first;e=pa.second;
                         break;
                     }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {

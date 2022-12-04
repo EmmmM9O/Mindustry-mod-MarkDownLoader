@@ -26,7 +26,7 @@ public class MarkBlock extends MessageBlock {
                 });
                 ui.button("@ok",ui::hide);
                 ui.show();
-            });
+            }).size(40f);
         }
     }
 }

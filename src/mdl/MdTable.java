@@ -112,8 +112,10 @@ public class MdTable {
                 if (data.length()>m.end()&&data.charAt(m.end())=='\n'){
 
                     t.row();
+                   
 
                     scl=1;
+                    break;
 
                 }
 

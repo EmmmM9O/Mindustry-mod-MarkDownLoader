@@ -16,7 +16,7 @@ public class Gs {
             scl=3f;var flag=false;
             for (int j=from;j>=0;j--){
                 if(i.charAt(j)=='#'){
-                    if(flag ) scl-=0.f;
+                    if(flag ) scl-=0.6f;
                     else flag=true;
                 }else if (flag) break;
             }

@@ -19,11 +19,12 @@ public class MdFonts {
         FreeTypeFontGenerator g=new FreeTypeFontGenerator(fontFi);
         FreeTypeFontGenerator.FreeTypeFontParameter p=new FreeTypeFontGenerator.FreeTypeFontParameter() {{
 
-            size = 20;
+            size = 30;
 
-            shadowColor = Color.black;
 
-            shadowOffsetY = 4;
+            shadowColor = Color.darkGray;
+
+            shadowOffsetY = 2;
 
             incremental = true;
 
@@ -31,6 +32,7 @@ public class MdFonts {
         return  g.generateFont(p, new FreeTypeFontGenerator.FreeTypeFontData() {
 
             {
+                down*=1.3f;
 
                 markupEnabled = true;
 

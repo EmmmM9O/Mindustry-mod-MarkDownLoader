@@ -13,7 +13,7 @@ import java.util.Vector;
 import java.util.regex.Pattern;
 
 public class MdTable {
-    public static MdG[] key={Gs.ChuTi};
+    public static MdG[] key={Gs.ChuTi,Gs.XieTi,Gs.TI};
     public static String k="[^*~#\\n]+";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline, Color.black);
     public Vector<Integer>[] l=new Vector[key.length];

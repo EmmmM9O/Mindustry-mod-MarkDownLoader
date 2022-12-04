@@ -52,35 +52,39 @@ public class MdTable {
             now[i]=0;
         }
         Label.LabelStyle e=UseL;
+        var kk=0;
         while (m.find()){
             cnt=-1;
             
+            
             for (var i:key){
+            
                 cnt++;
                 if(now[cnt]*2>=l[cnt].size()) {
-                    t.add(m.group(cnt),e,scl);
+                    t.add(m.group(kk),e,scl);
                     continue;
                   
                     }
                 if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) {
-                    t.add(m.group(cnt),e,scl);
+                    t.add(m.group(kk),e,scl);
                     continue;
                     }
                 if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
                     Log.info("run");
-                    Log.info(m.group(cnt));
-                    scl=i.Run.get(t,scl,e,m.group(cnt));
+                    Log.info(m.group(kk));
+                    scl=i.Run.get(t,scl,e,m.group(kk));
                 }else if(m.end()>=l[cnt].get(now[cnt]*2+1)){
                     now[cnt]++;
-                    t.add(m.group(cnt),e,scl);
+                    t.add(m.group(kk),e,scl);
                   
                 }
-                else t.add(m.group(cnt),e,scl);
+                else t.add(m.group(kl),e,scl);
                 if (data.charAt(m.end())=='\n'){
                     t.row();
                     scl=1;
                 }
             }
+            kk++;
         }
     }
     public MdTable(){

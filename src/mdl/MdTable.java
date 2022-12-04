@@ -6,14 +6,13 @@ import arc.graphics.Color;
 import arc.scene.ui.Label;
 import arc.scene.ui.layout.Table;
 import arc.util.*;
-import mindustry.ui.Fonts;
 
 import java.util.Vector;
 
 import java.util.regex.Pattern;
 
 public class MdTable {
-    public static MdG[] key={Gs.ChuTi,Gs.XieTi,Gs.TI};
+    public static MdG[] key={Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
     public static String k="[^~#*\\n]+";
     public static Label.LabelStyle UseL=new Label.LabelStyle(MdFonts.OsTh, Color.black);
     public Vector<Integer>[] l=new Vector[key.length];
@@ -28,7 +27,7 @@ public class MdTable {
 
         float scl=1f;int cnt;
         Label.LabelStyle e=UseL;
-        var flag=false;
+
 
         var ss=data.split("\\n");
         for (var nows : ss){
@@ -54,20 +53,24 @@ public class MdTable {
             while (m.find()){
                 cnt=-1;
                 String ew=m.group();
-                flag=false;
+
                 for (var i:key){
                     cnt++;
 
                     if(now[cnt]*2>=l[cnt].size()) continue;
                     if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
                     if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
-                        flag=true;
-                        scl=i.Run.get(t,scl,e,ew);
+
+                        var pa=i.Run.get(t,scl,e,ew,m.start());
+                        scl=pa.first;e=pa.second;
                         break;
-                    }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) now[cnt]++;
+                    }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
+                        now[cnt]++;
+                        e=UseL;
+                    }
                 }
 
-                if(!flag) t.add(ew,e,scl);
+                t.add(ew,e,scl);
 
             }
             t.row();

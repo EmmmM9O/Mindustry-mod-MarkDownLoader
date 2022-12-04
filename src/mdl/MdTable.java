@@ -119,7 +119,7 @@ public class MdTable {
 
             }
 
-            if(!flag) t.add(m.group(kk),e,scl)
+            if(!flag) t.add(m.group(kk),e,scl);
 
             kk++;
 

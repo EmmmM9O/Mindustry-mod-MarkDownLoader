@@ -53,11 +53,12 @@ public class MdTable {
         }
         Label.LabelStyle e=UseL;
 
-        var kk=0;var flag=false;
+        var flag=false;
 
         while (m.find()){
 
             cnt=-1;
+            String ew=m.group();
 
             
 
@@ -93,9 +94,9 @@ public class MdTable {
 
                     Log.info("run");
 
-                    Log.info(m.group(kk));
+                    Log.info(ew);
 
-                    scl=i.Run.get(t,scl,e,m.group(kk));
+                    scl=i.Run.get(t,scl,e,ew);
 
                     break;
 
@@ -121,9 +122,9 @@ public class MdTable {
 
             }
 
-            if(!flag) t.add(m.group(kk),e,scl);
+            if(!flag) t.add(ew,e,scl);
 
-            kk++;
+            
 
         }
             

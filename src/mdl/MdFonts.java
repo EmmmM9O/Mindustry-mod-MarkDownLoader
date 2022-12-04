@@ -9,7 +9,7 @@ import mindustry.ui.Fonts;
 
 
 public class MdFonts {
-    public static Font Smiley;
+    public static Font Smiley,OsBlack,OsRI;
     public static Font add(String name){
 
         Fi fontFi= Vars.mods.getMod(mainMod.class).root.child("fonts").child(name);
@@ -40,5 +40,7 @@ public class MdFonts {
     }
     public static void init(){
         Smiley=add("SmileySans-Oblique.ttf");
+        OsBlack=add("HarmonyOS_Sans_Black.ttf");
+        OsRI=add("HarmonyOS_Sans_Regular_Italic.ttf");
     }
 }

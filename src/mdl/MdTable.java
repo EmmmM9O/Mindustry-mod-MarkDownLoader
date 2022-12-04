@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class MdTable {
     public static MdG[] key={Gs.ChuTi,Gs.XieTi,Gs.TI};
-    public static String k="[^*~#\\n]+";
+    public static String k="\\b[^~#*]+\\b";
     public static Label.LabelStyle UseL=new Label.LabelStyle(Fonts.outline, Color.darkGray);
     public Vector<Integer>[] l=new Vector[key.length];
 

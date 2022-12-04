@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class MdTable {
     public static MdG[] key={Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
     public static String k="[^~#*\\n]+";
-    public static Label.LabelStyle UseL=new Label.LabelStyle(MdFonts.OsTh, Color.black);
+    public static Label.LabelStyle UseL=new Label.LabelStyle(MdFonts.OsTh,mainMod.TiColor);
     public Vector<Integer>[] l=new Vector[key.length];
 
     public Integer[] now=new Integer[key.length];
@@ -63,7 +63,7 @@ public class MdTable {
                     if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
                     if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
 
-                        var pa=i.Run.get(t,scl,new Label.LabelStyle(e),ew,nows);
+                        var pa=i.Run.get(t,scl,new Label.LabelStyle(e),ew,nows,m.start());
                         scl=pa.first;e=new Label.LabelStyle(pa.second);
                         
                     }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {

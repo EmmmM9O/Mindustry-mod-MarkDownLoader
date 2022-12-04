@@ -1,6 +1,7 @@
 package mdl;
 
 import arc.*;
+import arc.graphics.Color;
 import arc.util.*;
 import mindustry.content.Items;
 import mindustry.game.EventType.*;
@@ -10,7 +11,8 @@ import mindustry.type.ItemStack;
 import mindustry.ui.dialogs.*;
 
 public class mainMod extends Mod{
-    public MarkBlock MarkDownMessage;
+    public static MarkBlock MarkDownMessage;
+    public static Color TiColor=new Color(0x202125ff);
     public mainMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
 

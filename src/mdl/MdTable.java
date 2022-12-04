@@ -78,7 +78,7 @@ public class MdTable {
                     t.add(m.group(kk),e,scl);
                   
                 }
-                else t.add(m.group(kl),e,scl);
+                else t.add(m.group(kk),e,scl);
                 if (data.charAt(m.end())=='\n'){
                     t.row();
                     scl=1;

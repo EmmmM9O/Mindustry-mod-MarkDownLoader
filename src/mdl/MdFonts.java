@@ -32,7 +32,7 @@ public class MdFonts {
         return  g.generateFont(p, new FreeTypeFontGenerator.FreeTypeFontData() {
 
             {
-                down*=1.3f;
+                
 
                 markupEnabled = true;
 

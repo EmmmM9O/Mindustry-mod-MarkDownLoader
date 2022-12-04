@@ -22,7 +22,7 @@ public class Gs {
             return scl;
 
         };
-        TI.i="((?![^*])|^)\\*{2}\\b[^*\\n]+\\b\\*{1}((?=[^*])|$)";
+        TI.i="((?![^*])|^)\\*{2}\\b[^*\\n]+\\b\\*{2}((?=[^*])|$)";
         TI.Run=(t,scl,e,s)->{
             t.add(s,MdStyle.Smiley,scl);
             return scl;

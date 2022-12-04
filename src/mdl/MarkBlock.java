@@ -4,6 +4,7 @@ import arc.scene.ui.layout.Table;
 import mindustry.ui.dialogs.BaseDialog;
 import mindustry.world.blocks.logic.MessageBlock;
 import arc.Core;
+import mindustry.ui.*;
 
 public class MarkBlock extends MessageBlock {
     public MdTable md=new MdTable();
@@ -16,7 +17,7 @@ public class MarkBlock extends MessageBlock {
         @Override
         public void buildConfiguration(Table table){
             super.buildConfiguration(table);
-            table.button("show",()->{
+            table.button(Icon.play, Styles.cleari,()->{
                 var ui=new BaseDialog("MarkDown");
                 ui.background(Core.atlas.drawable("mdl-BackGround"));
                 ui.cont.table(t -> {

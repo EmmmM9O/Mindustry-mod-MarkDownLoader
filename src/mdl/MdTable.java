@@ -1,6 +1,7 @@
 package mdl;
 
 
+import arc.Core;
 import arc.graphics.Color;
 
 import arc.scene.ui.Label;
@@ -12,7 +13,7 @@ import java.util.Vector;
 import java.util.regex.Pattern;
 
 public class MdTable {
-    public static MdG[] key={Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
+    public static MdG[] key={Gs.Yy,Gs.Te,Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
     public static String k="[^~#*\\n]+";
     public static Label.LabelStyle UseL=new Label.LabelStyle(MdFonts.OsTh,mainMod.TiColor);
     public Vector<Integer>[] l=new Vector[key.length];
@@ -73,7 +74,7 @@ public class MdTable {
                 }
 
                 t.add(ew,e,scl);
-
+                e.background= Core.atlas.drawable("mdl-BackGround");
             }
             t.row();
             scl=1f;
@@ -82,6 +83,12 @@ public class MdTable {
 
             
     }
+
+
+
+
+
+
     public MdTable(){
 }
 }

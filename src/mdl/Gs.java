@@ -1,16 +1,27 @@
 package mdl;
 
 
+import arc.Core;
 import arc.graphics.Color;
 
 public class Gs {
 
-    public static MdG Til=new MdG(),ChuTi=new MdG(),XieTi=new MdG(),TI=new MdG();
+    public static MdG Te=new MdG(),Yy=new MdG(),Til=new MdG(),ChuTi=new MdG(),XieTi=new MdG(),TI=new MdG();
     public static void init(){
         /*
         *test*
          */
+        Yy.i="((?![^`])|^)`{1}\\b[^`\\n]+\\`{1}((?=[^`])|$)";
+        Yy.Run=(t,scl,e,s,i,from)->{
+            e.background= Core.atlas.drawable("mdl-BackGround2");
+            return new pair<>(scl,e);
 
+        };
+        Te.i=">+ [^>\\*~n]+";
+        Te.Run=(t,scl,e,s,i,from)->{
+            t.image(Core.atlas.drawable("mdl-YinYong"));
+            return new pair<>(scl,e);
+        };
         Til.i="#+ [^#\\n]+";
         Til.Run=(t,scl,e,s,i,from)->{
             scl=3f;var flag=false;

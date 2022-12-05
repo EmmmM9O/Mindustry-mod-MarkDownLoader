@@ -11,7 +11,7 @@ public class Gs {
         /*
         *test*
          */
-        Yy.i="((?![^`])|^)`{1}\\b[^`\\n]+\\`{1}((?=[^`])|$)";
+        Yy.i="((?![^`])|^)`{1}\\b[^`\\n]+\\b`{1}((?=[^`])|$)";
         Yy.Run=(t,scl,e,s,i,from)->{
             e.background= Core.atlas.drawable("mdl-BackGround2");
             return new pair<>(scl,e);

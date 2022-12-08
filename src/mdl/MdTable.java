@@ -16,7 +16,7 @@ public class MdTable {
 
     public static MdG[] key={Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
 
-    public static String k="[^~#*\\n]+";
+    public static String k="[^`>~#*\\n]+";
 
     public static Label.LabelStyle UseL=new Label.LabelStyle(MdFonts.OsTh, Color.black);
 
@@ -105,7 +105,7 @@ public class MdTable {
 
                         
 
-                    }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
+                    }else if(m.end()>l[cnt].get(now[cnt]*2+1)) {
 
                         now[cnt]++;
                         Log.info("out");
@@ -113,9 +113,10 @@ public class MdTable {
                         e=new Label.LabelStyle(UseL);
 
                     }
+                    Log.info(now[cnt]);
 
                 }
-                Log.info(now[cnt]);
+                
 
                 t.add(ew,e,scl);
 

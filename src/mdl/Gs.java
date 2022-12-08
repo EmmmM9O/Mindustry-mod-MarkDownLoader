@@ -19,7 +19,7 @@ public class Gs {
         };
         Te.i=">+ [^>\\*~n]+";
         Te.Run=(t,scl,e,s,i,from)->{
-            t.image(Core.atlas.drawable("mdl-YinYong"));
+            t.image(Core.atlas.drawable("mdl-YinYong")).size(5f,30f);
             return new pair<>(scl,e);
         };
         Til.i="#+ [^#\\n]+";

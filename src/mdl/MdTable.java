@@ -96,7 +96,7 @@ public class MdTable {
 
                     if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
 
-                    if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
+                    if (m.end()<=l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
 
                         var pa=i.Run.get(t,scl,new Label.LabelStyle(e),ew,nows);
 

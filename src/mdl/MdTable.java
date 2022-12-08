@@ -63,6 +63,8 @@ public class MdTable {
                     l[cnt].add(m.end());
 
                     Log.info("add");
+                    Log.info(m.start());
+                    Log.info(m.end());
 
                 }
 
@@ -106,16 +108,19 @@ public class MdTable {
                     }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
 
                         now[cnt]++;
+                        Log.info("out");
 
                         e=new Label.LabelStyle(UseL);
 
                     }
 
                 }
+                Log.info(now[cnt]);
 
                 t.add(ew,e,scl);
 
             }
+            
 
             t.row();
 

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class MdTable {
     public static MdG[] key={Gs.Yy,Gs.Te,Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
-    public static String k="[^~#*\\n]+";
+    public static String k="[^~#*\\n>`]+";
     public static Label.LabelStyle UseL=new Label.LabelStyle(MdFonts.OsTh,mainMod.TiColor);
     public Vector<Integer>[] l=new Vector[key.length];
 
@@ -82,7 +82,7 @@ public class MdTable {
                          
                         
 
-                t.add(ew,e,scl);
+                t.add(ew,e,scl).size(ew.length()*42*scl);
                 e.background= Core.atlas.drawable("mdl-BackGround");
             }
             t.row();

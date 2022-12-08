@@ -64,13 +64,13 @@ public class MdTable {
 
                     if(now[cnt]*2>=l[cnt].size()) continue;
                     if(now[cnt]==null||l[cnt].get(now[cnt]*2)==null) continue;
-                    if (m.end()<l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
+                    if (m.end()<=l[cnt].get(now[cnt]*2+1)&&m.start()>=l[cnt].get(now[cnt]*2)){
 
                         var pa=i.Run.get(t,scl,new Label.LabelStyle(e),ew,nows,m.start());
                         scl=pa.first;e=new Label.LabelStyle(pa.second);
                         Log.info(scl);
                         
-                    }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
+                    }else if(m.end()>l[cnt].get(now[cnt]*2+1)) {
                         now[cnt]++;
                         e=new Label.LabelStyle(UseL);
                         Log.info("end");

@@ -43,6 +43,8 @@ public class MdTable {
                     l[cnt].add(m.start());
                     l[cnt].add(m.end());
                     Log.info("add");
+                    Log.info(m.start());
+                    Log.info(m.end());
                 }
                 cnt++;
             }
@@ -71,8 +73,14 @@ public class MdTable {
                     }else if(m.end()>=l[cnt].get(now[cnt]*2+1)) {
                         now[cnt]++;
                         e=new Label.LabelStyle(UseL);
+                        Log.info("end");
                     }
+                    Log.info("now:");
+                    Log.info(now[nct]);
                 }
+                
+                         
+                        
 
                 t.add(ew,e,scl);
                 e.background= Core.atlas.drawable("mdl-BackGround");

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class MdTable {
 
-    public static MdG[] key={Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
+    public static MdG[] key={Gs.Yy,Gs.Te,Gs.Til,Gs.ChuTi,Gs.XieTi,Gs.TI};
 
     public static String k="[^`>~#*\\n]+";
 

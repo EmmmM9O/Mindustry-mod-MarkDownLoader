@@ -76,7 +76,7 @@ public class MdTable {
                         Log.info("end");
                     }
                     Log.info("now:");
-                    Log.info(now[nct]);
+                    Log.info(now[cnt]);
                 }
                 
                          

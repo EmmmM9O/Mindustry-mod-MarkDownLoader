@@ -99,6 +99,7 @@ public class MdTable {
                         var pa=i.Run.get(t,scl,new Label.LabelStyle(e),ew,nows);
 
                         scl=pa.first;e=new Label.LabelStyle(pa.second);
+                        Log.info(scl);
 
                         
 

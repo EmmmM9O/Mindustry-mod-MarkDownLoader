@@ -55,10 +55,12 @@ public class MdTable {
                 now[i]=0;
             }
             var m=Pattern.compile(k).matcher(nows);
+            var ta=new Table();
             while (m.find()){
                 e=new Label.LabelStyle(UseL);
                 cnt=-1;
                 String ew=m.group();
+             
 
 
                 for (var i:key){
@@ -84,9 +86,10 @@ public class MdTable {
                          
                         
 
-                t.add(ew,e,scl).size(ew.length()*42*scl);
+                ta.add(ew,e,scl);
                 e.background= Core.atlas.drawable("mdl-BackGround");
             }
+            t.add(ta);
             t.row();
             scl=1f;
         }

@@ -57,9 +57,10 @@ public class MdTable {
                 e=new Label.LabelStyle(UseL);
                 cnt=-1;
                 String ew=m.group();
-
+                var ta=new Table();
 
                 for (var i:key){
+                    
                     cnt++;
 
                     if(now[cnt]*2>=l[cnt].size()) continue;
@@ -82,9 +83,10 @@ public class MdTable {
                          
                         
 
-                t.add(ew,e,scl).size(ew.length()*42*scl);
+                ta.add(ew,e,scl);
                 e.background= Core.atlas.drawable("mdl-BackGround");
             }
+            t.add(ta);
             t.row();
             scl=1f;
         }

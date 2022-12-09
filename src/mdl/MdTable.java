@@ -53,11 +53,12 @@ public class MdTable {
                 now[i]=0;
             }
             var m=Pattern.compile(k).matcher(nows);
+            var ta=new Table();
             while (m.find()){
                 e=new Label.LabelStyle(UseL);
                 cnt=-1;
                 String ew=m.group();
-                var ta=new Table();
+                
 
                 for (var i:key){
                     
